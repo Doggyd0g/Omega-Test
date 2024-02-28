@@ -1,0 +1,63 @@
+﻿<Window x:Class="PP_Omega.LoginerWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PP_Omega"
+        mc:Ignorable="d"
+         Title="Авторизация" Height="470" Width="600" ResizeMode="NoResize">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF16618F"/>
+                <GradientStop Color="#FF93979A" Offset="1.1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" ></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <!-- <Grid Grid.Row="0" Grid.ColumnSpan="3" Background="#FF0E88D3"/> -->
+
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Transparent"  BorderThickness="3" CornerRadius="20">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0E88D3"/>
+                    <GradientStop Color="AliceBlue" Offset="1.1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="20" Color="#FF837D7D" ShadowDepth="0"/>
+            </Border.Effect>
+
+            <StackPanel Margin="5">
+                <Image Source="Pictures\BhsLogo.png" Height="65"/>
+                <TextBlock Margin="0 25" Text="Авторизация" HorizontalAlignment="Center" FontSize="20" Foreground="#FF2056AE" FontWeight="Heavy"></TextBlock>
+                <TextBlock Text="Логин:" Foreground="#FF2056AE" HorizontalAlignment="Left" FontSize="18" Margin="65 0 0 5" FontWeight="Heavy"/>
+                <TextBox x:Name="tb_login" Margin="65 0 65 5" Height="35" FontSize="18" Text="Egorka"  Foreground="Black" />
+
+                <TextBlock Text="Пароль:" Foreground="#FF2056AE" Margin="65 0 0 5" HorizontalAlignment="Left" FontSize="18"  FontWeight="Heavy"/>
+                <PasswordBox x:Name="pw_password" Margin="65 0 65 5" Width="400" HorizontalAlignment="Left" Height="35" FontSize="20" 
+                                 Foreground="Black" Password="6633" />
+
+                <TextBox x:Name="txbPass" HorizontalAlignment="Left" Grid.Row="1" Width="355" Height="30"
+                             Margin="65 -35 65 5" Visibility="Hidden" TextAlignment="Left" FontSize="18" ></TextBox>
+
+                <Image Height="30" Width="30" Margin="325 -40 0 0" Source="Pictures\eyeIcon.png" Visibility="Visible" MouseLeftButtonDown="password_visible" Name="IconVisible"></Image>
+                <Image Height="30" Width="30" Margin="325 -40 0 0" Source="Pictures\hideIcon.png" Visibility="Hidden" MouseLeftButtonDown="password_hidden"  Name="IconHidden" ></Image>
+
+                <Button  Height="30" Width="150" Margin="0 20" FontSize="15" FontWeight="UltraLight" Foreground="AliceBlue" Background="#FF0E88D3" BorderBrush="Transparent"  Content="Войти" Click="Login_Click"  />
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Window>
+
